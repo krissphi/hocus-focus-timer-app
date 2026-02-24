@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:timtam/ui/widget/home/stats_card.dart';
+import 'package:hocusfocus/ui/widget/home/stats_card.dart';
 
 import '../../data/model/task.dart';
 import '../../state/entity_providers.dart';
@@ -14,20 +14,31 @@ import '../widget/home/task_list.dart';
 import 'history_page.dart';
 import 'task_form.dart';
 
-class HomePage extends ConsumerWidget {
+class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends ConsumerState<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final timerController = ref.read(taskTimerControllerProvider);
+      timerController.ensureNormalized();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final sessionState = ref.watch(sessionNotifierProvider);
     final segmentState = ref.watch(segmentNotifierProvider);
     final taskController = ref.read(taskNotifierProvider.notifier);
     final timerController = ref.read(taskTimerControllerProvider);
     final now = DateTime.now();
     final today = AppDateUtils.dateOnly(now);
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      timerController.ensureNormalized(now: now);
-    });
 
     final sessions = sessionState.items;
     final segments = segmentState.items;

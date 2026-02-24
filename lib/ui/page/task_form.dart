@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:timtam/ui/widget/form/bottom_sheet_layout.dart';
-import 'package:timtam/ui/widget/form/color_picker.dart';
-import 'package:timtam/ui/widget/form/day_picker.dart';
-import 'package:timtam/ui/widget/form/dialog_layout.dart';
+import 'package:hocusfocus/ui/widget/form/bottom_sheet_layout.dart';
+import 'package:hocusfocus/ui/widget/form/color_picker.dart';
+import 'package:hocusfocus/ui/widget/form/day_picker.dart';
+import 'package:hocusfocus/ui/widget/form/dialog_layout.dart';
 
 import '../../data/model/task.dart';
 import '../utils/task_color_palette.dart';

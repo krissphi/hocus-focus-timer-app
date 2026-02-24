@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:timtam/ui/utils/task_schedule_utils.dart';
+import 'package:hocusfocus/ui/utils/task_schedule_utils.dart';
 
 class DayPickerWidget extends StatelessWidget {
   final Set<int> selectedDays;

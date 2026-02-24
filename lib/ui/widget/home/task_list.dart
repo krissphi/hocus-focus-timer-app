@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:timtam/ui/widget/empty_list.dart';
+import 'package:hocusfocus/ui/widget/empty_list.dart';
 
 import '../../../data/model/task.dart';
 import '../../../state/view_providers.dart';

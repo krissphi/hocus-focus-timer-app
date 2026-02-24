@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:timtam/ui/utils/task_color_palette.dart';
+import 'package:hocusfocus/ui/utils/task_color_palette.dart';
 
 class ColorPickerWidget extends StatelessWidget {
   const ColorPickerWidget({

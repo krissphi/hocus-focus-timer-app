@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:timtam/ui/utils/date_time_utils.dart';
+import 'package:hocusfocus/ui/utils/date_time_utils.dart';
 import 'package:uuid/uuid.dart';
 
 import '../data/model/session.dart';

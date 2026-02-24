@@ -37,6 +37,39 @@ class TaskListItem extends StatelessWidget {
   final void Function(String) onReset;
   final bool? isDesktop;
 
+  Future<void> _confirmAndDelete(BuildContext context) async {
+    final theme = Theme.of(context);
+    final shouldDelete = await showDialog<bool>(
+      context: context,
+      builder: (dialogContext) {
+        return AlertDialog(
+          title: const Text('Delete Task'),
+          content: Text(
+            'Are you sure you want to permanently delete "${task.title}"?',
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(dialogContext).pop(false),
+              child: const Text('Cancel'),
+            ),
+            FilledButton(
+              style: FilledButton.styleFrom(
+                backgroundColor: theme.colorScheme.error,
+                foregroundColor: theme.colorScheme.onError,
+              ),
+              onPressed: () => Navigator.of(dialogContext).pop(true),
+              child: const Text('Delete'),
+            ),
+          ],
+        );
+      },
+    );
+
+    if (shouldDelete == true) {
+      onDelete(task.id);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final accentColor = Color(task.colorValue);
@@ -182,13 +215,13 @@ class TaskListItem extends StatelessWidget {
                               icon: const Icon(Icons.refresh, size: 18),
                             ),
                             IconButton(
-                              onPressed: () => onDelete(task.id),
+                              onPressed: () => _confirmAndDelete(context),
                               icon: const Icon(Icons.delete, size: 18),
                             ),
                           ],
                           if (isDesktop == false) ...[
                             PopupMenuButton<String>(
-                              onSelected: (value) {
+                              onSelected: (value) async {
                                 switch (value) {
                                   case 'edit':
                                     onEdit(task);
@@ -202,7 +235,7 @@ class TaskListItem extends StatelessWidget {
                                     onReset(task.id);
                                     break;
                                   case 'delete':
-                                    onDelete(task.id);
+                                    await _confirmAndDelete(context);
                                     break;
                                 }
                               },

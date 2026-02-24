@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:timtam/data/model/session.dart';
-import 'package:timtam/ui/widget/history/history_item_card.dart';
-import 'package:timtam/ui/widget/history/weekly_chart.card.dart';
+import 'package:hocusfocus/data/model/session.dart';
+import 'package:hocusfocus/ui/widget/history/history_item_card.dart';
+import 'package:hocusfocus/ui/widget/history/weekly_chart.card.dart';
 
 import '../../state/view_providers.dart';
 import '../utils/history_utils.dart';

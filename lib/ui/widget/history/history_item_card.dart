@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:timtam/data/model/session.dart';
-import 'package:timtam/data/model/task.dart';
-import 'package:timtam/ui/utils/date_time_utils.dart';
+import 'package:hocusfocus/data/model/session.dart';
+import 'package:hocusfocus/data/model/task.dart';
+import 'package:hocusfocus/ui/utils/date_time_utils.dart';
 
 class HistoryItemCard extends StatelessWidget {
   const HistoryItemCard({

@@ -1,6 +1,6 @@
 import 'package:hive_ce/hive_ce.dart';
-import 'package:timtam/data/model/session.dart';
-import 'package:timtam/data/model/time_segment.dart';
+import 'package:hocusfocus/data/model/session.dart';
+import 'package:hocusfocus/data/model/time_segment.dart';
 
 import '../model/task.dart';
 
