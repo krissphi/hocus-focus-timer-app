@@ -4,7 +4,7 @@ A productivity and time tracking application built with Flutter. Track your dail
 
 ## App Icon
 
-<img src="assets/icon_app.png" alt="Hocus Focus App Icon" width="120" />
+<img src="assets/icon/icon.png" alt="Hocus Focus App Icon" width="120" />
 
 ## Screenshots
 
